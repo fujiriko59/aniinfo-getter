@@ -1,4 +1,4 @@
-package jp.aniinfo.wikipedia.httpclient;
+package jp.aniinfo.httpclient;
 
 
 import org.apache.http.conn.ClientConnectionManager;

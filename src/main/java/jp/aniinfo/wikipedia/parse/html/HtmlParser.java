@@ -4,7 +4,7 @@ package jp.aniinfo.wikipedia.parse.html;
 import jp.aniinfo.wikipedia.entity.CharacterInfo;
 import jp.aniinfo.wikipedia.exception.WikiParseException;
 import jp.aniinfo.wikipedia.entity.WikiInfo;
-import jp.aniinfo.wikipedia.httpclient.HttpClientFactory;
+import jp.aniinfo.httpclient.HttpClientFactory;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;

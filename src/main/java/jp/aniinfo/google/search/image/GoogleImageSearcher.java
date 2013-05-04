@@ -3,7 +3,7 @@ package jp.aniinfo.google.search.image;
 
 import jp.aniinfo.google.exception.GoogleImageSearchException;
 import jp.aniinfo.google.search.image.entity.ImageInfo;
-import jp.aniinfo.wikipedia.httpclient.HttpClientFactory;
+import jp.aniinfo.httpclient.HttpClientFactory;
 import net.arnx.jsonic.JSON;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.HttpResponse;

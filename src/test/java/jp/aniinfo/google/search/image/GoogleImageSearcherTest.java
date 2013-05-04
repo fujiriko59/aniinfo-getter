@@ -5,7 +5,6 @@ import jp.aniinfo.google.search.image.entity.ImageInfo;
 import junit.framework.TestCase;
 import org.apache.commons.lang.StringUtils;
 
-import java.net.URLDecoder;
 import java.net.URLEncoder;
 import java.util.List;
 
