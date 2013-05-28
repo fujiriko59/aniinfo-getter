@@ -9,13 +9,13 @@ import org.apache.commons.lang.StringUtils;
 
 import java.util.Map;
 
-public class HtmlParserTest extends TestCase {
+public class WikiHtmlParserTest extends TestCase {
     public void test_parse_success() {
         String[] titles = {"らき☆すた","灰羽連盟","進撃の巨人","ラブライブ!","俺の妹がこんなに可愛いわけがない","はたらく魔王さま!"};
         for (String title : titles) {
             WikiInfo info;
             try {
-                info = HtmlParser.parse(title);
+                info = WikiHtmlParser.parse(title);
                 assertEquals(title, info.getTitle());
                 if (info.getInfobox() != null) {
                     assertTrue(info.getInfobox().entrySet().size() > 0);
@@ -49,7 +49,7 @@ public class HtmlParserTest extends TestCase {
     }
 
     public void test_parse_fail() {
-        HtmlParser parser = new HtmlParser();
+        WikiHtmlParser parser = new WikiHtmlParser();
         try {
             parser.parse("testaaatest");
             fail();
@@ -59,7 +59,7 @@ public class HtmlParserTest extends TestCase {
     }
 
     public void test_deleteInnerTable() {
-        HtmlParser parser = new HtmlParser();
+        WikiHtmlParser parser = new WikiHtmlParser();
         String str = "<table>abc<table>defg</table>hijk</table>";
         str = parser.deleteInnerTable(str);
         assertEquals("<table>abchijk</table>", str);

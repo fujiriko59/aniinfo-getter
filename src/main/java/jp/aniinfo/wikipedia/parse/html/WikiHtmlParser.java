@@ -16,7 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class HtmlParser {
+public class WikiHtmlParser {
     public static WikiInfo parse(String title) throws WikiParseException {
         WikiInfo info = new WikiInfo();
 
