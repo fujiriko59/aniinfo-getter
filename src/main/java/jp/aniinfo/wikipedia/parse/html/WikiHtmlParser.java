@@ -11,6 +11,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
 
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,8 +24,8 @@ public class WikiHtmlParser {
         info.setTitle(title);
 
         HttpClient client = HttpClientFactory.create();
-        HttpGet httpGet = new HttpGet("http://ja.wikipedia.org/wiki/" + title);
         try {
+            HttpGet httpGet = new HttpGet("http://ja.wikipedia.org/wiki/" + URLEncoder.encode(title, "UTF-8"));
             HttpResponse response = client.execute(httpGet);
             String html = EntityUtils.toString(response.getEntity());
             if (html.indexOf("class=\"infobox") < 0) {

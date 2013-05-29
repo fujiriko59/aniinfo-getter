@@ -11,6 +11,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.util.EntityUtils;
 
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -25,7 +26,7 @@ public class GoogleImageSearcher {
         List<ImageInfo> results = new ArrayList<ImageInfo>();
         HttpClient client = HttpClientFactory.create();
         try {
-            HttpGet httpGet = new HttpGet(apiUrl + query);
+            HttpGet httpGet = new HttpGet(apiUrl + URLEncoder.encode(query, "UTF-8"));
             HttpResponse response = client.execute(httpGet);
             String json = EntityUtils.toString(response.getEntity());
             Pojo pojo = JSON.decode(json, Pojo.class);

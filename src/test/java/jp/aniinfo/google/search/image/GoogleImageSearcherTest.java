@@ -10,7 +10,7 @@ import java.util.List;
 
 public class GoogleImageSearcherTest extends TestCase {
     public void test_search_success() {
-        String[] titles = {"灰羽連盟", "広橋涼 OR 平野綾"};
+        String[] titles = {"灰羽連盟", "広橋涼 OR 平野綾", "うたの☆プリンスさまっ♪マジLOVE2000%"};
         for (String title : titles) {
             System.out.println(title);
             try {
