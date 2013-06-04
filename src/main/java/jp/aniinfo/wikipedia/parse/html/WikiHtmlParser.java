@@ -139,6 +139,8 @@ public class WikiHtmlParser {
             characterPage = title + "の登場人物";
         } else if (tmpStr.indexOf(">" + title + "のキャラクター一覧</a") >= 0) {
             characterPage = title + "のキャラクター一覧";
+        }  else if(tmpStr.indexOf(">涼宮ハルヒシリーズの登場人物</a") >= 0) {
+            characterPage= "涼宮ハルヒシリーズの登場人物";
         } else {
             return null;
         }

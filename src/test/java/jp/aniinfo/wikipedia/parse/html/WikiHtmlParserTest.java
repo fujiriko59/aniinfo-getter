@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class WikiHtmlParserTest extends TestCase {
     public void test_parse_success() {
-        String[] titles = {"らき☆すた","灰羽連盟","進撃の巨人","ラブライブ!","俺の妹がこんなに可愛いわけがない","はたらく魔王さま!"};
+        String[] titles = {"涼宮ハルヒの憂鬱_(アニメ)","らき☆すた","灰羽連盟","進撃の巨人","ラブライブ!"};
         for (String title : titles) {
             WikiInfo info;
             try {
