@@ -110,6 +110,8 @@ public class WikiHtmlParser {
             characterPage = "登場人物";
         } else if (tmpStr.indexOf(">主要人物</span") >= 0) {
             characterPage = "主要人物";
+        } else if (tmpStr.indexOf(">登場キャラクター</span") >= 0) {
+            characterPage = "登場キャラクター";
         } else if (tmpStr.indexOf(">主な登場人物</span") >= 0) {
             characterPage = "主な登場人物";
         } else if (tmpStr.indexOf(">" + title + "の登場人物</span") >= 0) {
