@@ -11,10 +11,11 @@ import java.util.Map;
 
 public class WikiHtmlParserTest extends TestCase {
     public void test_parse_success() {
-        String[] titles = {"花咲くいろは","涼宮ハルヒの憂鬱_(アニメ)","らき☆すた","灰羽連盟","進撃の巨人","ラブライブ!"};
+        String[] titles = {"涼宮ハルヒの憂鬱_(アニメ)","らき☆すた","灰羽連盟","進撃の巨人","ラブライブ!"};
         for (String title : titles) {
             WikiInfo info;
             try {
+                WikiHtmlParser.maxCharacterNum = 10;
                 info = WikiHtmlParser.parse(title);
                 assertEquals(title, info.getTitle());
                 if (info.getInfobox() != null) {

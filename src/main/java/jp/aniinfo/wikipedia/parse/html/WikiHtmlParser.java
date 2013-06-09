@@ -18,6 +18,8 @@ import java.util.List;
 import java.util.Map;
 
 public class WikiHtmlParser {
+    public static int maxCharacterNum = -1;
+
     public static WikiInfo parse(String title) throws WikiParseException {
         WikiInfo info = new WikiInfo();
 
@@ -141,7 +143,9 @@ public class WikiHtmlParser {
             characterPage = title + "の登場人物";
         } else if (tmpStr.indexOf(">" + title + "のキャラクター一覧</a") >= 0) {
             characterPage = title + "のキャラクター一覧";
-        }  else if(tmpStr.indexOf(">涼宮ハルヒシリーズの登場人物</a") >= 0) {
+        } else if (tmpStr.indexOf(">" + title + "の登場人物一覧</a") >= 0) {
+            characterPage = title + "の登場人物一覧";
+        } else if(tmpStr.indexOf(">涼宮ハルヒシリーズの登場人物</a") >= 0) {
             characterPage= "涼宮ハルヒシリーズの登場人物";
         } else {
             return null;
@@ -160,7 +164,7 @@ public class WikiHtmlParser {
         }
 
         if (StringUtils.isBlank(characterHtml)) {
-            return null;
+            throw new WikiParseException("Can not get wiki html.");
         }
 
         tmpStr = characterHtml.substring(characterHtml.indexOf("mw-headline"));
@@ -172,6 +176,12 @@ public class WikiHtmlParser {
         List<CharacterInfo> list = new ArrayList<CharacterInfo>();
 
         while (tmpStr.indexOf("<dt") >= 0) {
+            if(maxCharacterNum > -1) {
+                if(list.size() >= maxCharacterNum) {
+                    break;
+                }
+            }
+
             CharacterInfo info = new CharacterInfo();
             String name;
             String actor = "";
