@@ -99,7 +99,13 @@ public class WikiHtmlParser {
             tmpStr = tmpStr.trim();
         }
 
-        tmpStr = tmpStr.substring(0, tmpStr.indexOf("<table"));
+        int digestEndsTagPos;
+        if(tmpStr.indexOf("<table") < tmpStr.indexOf("<div")) {
+            digestEndsTagPos = tmpStr.indexOf("<table");
+        } else {
+            digestEndsTagPos = tmpStr.indexOf("<div");
+        }
+        tmpStr = tmpStr.substring(0, digestEndsTagPos);
         tmpStr = deleteHtmlTag(tmpStr);
         tmpStr = deleteReference(tmpStr);
         return tmpStr.trim();
