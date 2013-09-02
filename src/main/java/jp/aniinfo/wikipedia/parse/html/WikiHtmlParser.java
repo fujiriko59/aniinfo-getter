@@ -33,6 +33,7 @@ public class WikiHtmlParser {
             if (html.indexOf("class=\"infobox") < 0) {
                 throw new WikiParseException(title + " does not exsists.");
             }
+            info.setHtml(html);
             info.setInfobox(parseInfoBox(html));
             info.setDigest(parseDigest(html));
             String tmpTitle = title.replace("_(アニメ)", "");

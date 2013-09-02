@@ -18,6 +18,7 @@ public class WikiHtmlParserTest extends TestCase {
                 WikiHtmlParser.maxCharacterNum = 10;
                 info = WikiHtmlParser.parse(title);
                 assertEquals(title, info.getTitle());
+                assertTrue(info.getHtml().length() > 1000);
                 if (info.getInfobox() != null) {
                     assertTrue(info.getInfobox().entrySet().size() > 0);
                     for (Map.Entry<String, String> entry : info.getInfobox().entrySet()) {

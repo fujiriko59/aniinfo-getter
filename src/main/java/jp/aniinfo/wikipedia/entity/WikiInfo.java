@@ -13,6 +13,8 @@ public class WikiInfo {
 
     protected List<CharacterInfo> characters;
 
+    protected String html;
+
     public String getTitle() {
         return title;
     }
@@ -43,5 +45,13 @@ public class WikiInfo {
 
     public void setCharacters(List<CharacterInfo> characters) {
         this.characters = characters;
+    }
+
+    public String getHtml() {
+        return html;
+    }
+
+    public void setHtml(String html) {
+        this.html = html;
     }
 }
